@@ -1,0 +1,58 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ATN_Project App</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+    <h1>ATN Company.</h1>
+    <h1>CREATE: Create product data of the company..</h1>
+
+    <!-- (1): CREATE Task -->
+    <!-- -->
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="number" placeholder="number" name="number" />
+        <input type="text" placeholder="note" name="note" />
+        <button type="submit">Submit</button>
+    </form>
+    <!-- -->
+
+    <!-- (2) READ Task -->
+    <h2> List: Summary of product data. </h2>
+    <div class="wrapper">
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Names</th>
+                    <th>The number of product</th>
+                    <th>Note's product</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through quotes -->
+                <% for(var i=0; i < quotes.length; i++) {%>
+                    <tr>
+                        <td>
+                            <%= quotes[i].name %>
+                        </td>
+                        <td>
+                            <%=quotes[i].number %>
+                        </td>
+                        <td>
+                            <%= quotes[i].note %>
+                        </td>
+                    </tr>
+                    <% } %>
+        </table>
+
+
+
+</body>
+
+</html>
